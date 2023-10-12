@@ -1,0 +1,189 @@
+.slider-container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  overflow: hidden; /* Hide overflowing content */
+}
+
+body {
+  font-family: "Ink Free";
+  text-align: center;
+  background-image: url("back.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* CSS to align header */
+.header h1{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.header{
+  display:inline-flex;
+}
+.i1{
+  width:200px;
+  height:auto;
+  margin-right: 100px;
+}
+.i2{
+  width:200px;
+  height:auto;
+  margin-left: 200px;
+}
+.heading{
+  margin-left:250px;
+}
+
+h1 {
+  font-size: 48px;
+  margin-right: 200px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.centered-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: left;
+}
+.h2{
+  text-align:left;
+}
+.slider {
+  display: flex;
+  transition: transform 1s ease-in-out; /* Smooth transition */
+}
+p{
+  text-align: center;
+}
+.slider img {
+  width: 100%;
+  height: auto;
+}
+  
+img{
+  width: 60%;
+  border: image 80px;;
+}
+nav {
+  background-color: #333; /* Adjust background color as needed */
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #333333; /* Adjust background color as needed */
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #555; /* Adjust hover background color as needed */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.contact-section {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 50px;
+  text-align: center;
+}
+.contact-section img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+.contact-links a {
+  font-size: 24px;
+  margin: 0 10px;
+  color: #007BFF;
+}
+.contact-links a:hover {
+  color: #0056b3; /* Darker blue on hover */
+}
+.developer-info {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f8f9fa; /* Light gray background */
+}
+.developer-info img {
+  border-radius: 50%;
+  max-width: 100px;
+  margin-right: 20px;
+}
+.developer-info .details {
+  color: #333;
+}
+.developer-info .details h3 {
+  margin: 0 0 5px;
+  font-size: 1.5em;
+}
+.developer-info .details p {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+.developer-info .social-media a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2em;
+  margin-right: 10px;
+}
+.developer-info .social-media a:hover {
+  color: #007BFF; /* Change the hover color as per your preference */
+}
+.contact-links button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #007BFF; /* Border color */
+  border-radius: 5px; /* Rounded corners */
+  color: #007BFF; /* Text color */
+  background-color: #ffffff; /* Background color */
+  cursor: pointer;
+}
+
+.contact-links button:hover {
+  background-color: #007BFF; /* Hover background color */
+  color: #ffffff; /* Hover text color */
+}

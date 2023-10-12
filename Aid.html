@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Add your CSS styles here */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background: black; /* Background color */
+            color: aqua; /* Text color */
+
+        }
+
+        /* Background Video */
+        #background-video {
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            min-width: 100%; 
+            min-height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align to the left */
+            padding-top: 50px; /* Adjust as needed */
+        }
+
+        li {
+            margin-bottom: 20px;
+            cursor: pointer;
+            width: 700px; 
+            list-style: disc;
+        }
+
+        h1 {
+            font-size: 24px;
+            cursor: pointer;
+            position: relative;
+            margin-left: 2%;
+        }
+
+        .popup-content {
+            animation: slide 2s forwards;
+            opacity: 0;
+            margin-left: -200px;
+            padding-left: 20px;
+        }
+
+        @keyframes slide {
+            from {
+                margin-left: -200px;
+                opacity: 0;
+            }
+            to {
+                margin-left: 0;
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="back.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <ul>
+        <li>
+            <h1 onclick="togglePoint('machineLearning')">AI in Diagnostics</h1>
+            <div id="machineLearning" class="popup-content">
+                <ul>
+                    <li>AI diagnostics leverage advanced algorithms to interpret medical imaging (X-rays, MRI, CT scans) and pathology slides for faster and more accurate diagnoses.</li>
+                    <li>These applications aid healthcare professionals in detecting diseases like cancer, fractures, and other conditions, improving patient outcomes and reducing diagnosis time.</li>
+                    <li>AI diagnostics can analyze vast amounts of patient data and medical literature to assist in accurate diagnoses and suggest appropriate treatment plans.</li>
+                    <li>Machine learning models can be trained to detect early signs of diseases, helping in preventive healthcare and early intervention.</li>
+                    <li>AI-powered diagnostics enhance radiology and pathology practices by providing more precise results and reducing the chances of misinterpretation.</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <script>
+        let firstHeaderShown = false;
+
+        function togglePoint(id) {
+            const popup = document.getElementById(id);
+            if (!firstHeaderShown) {
+                firstHeaderShown = true;
+                const firstHeader = document.querySelector('h1');
+                firstHeader.style.animation = 'slide 0.5s forwards';
+            }
+
+            if (popup.style.opacity === '1') {
+                popup.style.animation = 'slide-reverse 0.5s forwards';
+            } else {
+                // Close other open popups
+                const popups = document.querySelectorAll('.popup-content');
+                popups.forEach(item => {
+                    if (item.id !== id) {
+                        item.style.animation = 'none';
+                        item.style.opacity = '0';
+                        item.style.marginLeft = '-200px';
+                    }
+                });
+
+                popup.style.animation = 'slide 2s forwards';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors List</title>
+    <style>
+        /* Add your CSS styles here */
+        /* Styles for pop-up */
+        body, ul {
+            margin: 0;
+            padding: 0;
+            text-align: left;
+            background-image: url("bakgr.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        ul {
+            list-style-type: style type bull;
+            padding: 20px;
+            background: none;
+        }
+        li {
+            text-align: left;
+            margin: 30px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+        }
+
+        img {
+            float: right;
+            margin-left: 0px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+        button{
+            align-items: center;
+            background-color: blue;
+            color: aqua;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: pink;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        popup-content label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .popup-content input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .popup-content button {
+            padding: 10px 20px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .popup-content button:hover {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <h1>Cardiologist</h1>
+            <img src="p2.png" alt="Doctor 1">
+                <h3>About Cardiologist:</h3>
+                <p>
+                    Dr. Nandini Kadiyala is a highly experienced Cardiology with expertise in diagnosing and treating a wide range of medical conditions. 
+                    She is dedicated to providing exceptional healthcare and promoting overall well-being.
+                </p>
+                <h3>Contact Information:</h3>
+                <p>
+                    Phone: 9849258739<br>
+                    Email: nandu.srida@info.com
+                </p>
+                <h3>Education and Experience:</h3>
+                <p>
+                    Dr. Nandini Kadiyala has a medical degree from Amani Medical School and has been practicing as a Cardiologist for over 6 years.
+                </p>
+                <h3>OverView</h3>
+                <ul>
+                    <li>Highly experienced medical professional specializing in primary healthcare.</li>
+                    <li>Expertise in diagnosing and treating a wide range of medical conditions.</li>
+                    <li>Dedicated to providing exceptional healthcare and promoting overall well-being.</li>
+                    <li>Skilled in preventive care, health education, and disease management.</li>
+                    <li>Empathetic and patient-centered approach to ensure the best care for each individual.</li>
+                </ul>
+            <button onclick="showPopup('Dr. Nandini Kadiyala')">Book Appointment</button>
+        </li>
+    </ul>
+
+    <!-- Pop-up for appointment booking -->
+    <div id="appointmentPopup" class="popup">
+        <div class="popup-content">
+            <h2>Book an Appointment</h2>
+            <label for="doctorName">Doctor Name:</label>
+            <input type="text" id="doctorName" readonly><br>
+
+            <label for="patientName">Patient Name:</label>
+            <input type="text" id="patientName"><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email"><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone"><br>
+
+            <label for="appointmentTime">Preferred Appointment Time:</label>
+            <input type="datetime-local" id="appointmentTime"><br>
+
+            <button onclick="bookAppointment()">Submit</button>
+            <button onclick="hidePopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup(doctorName) {
+            document.getElementById('doctorName').value = doctorName;
+            document.getElementById('appointmentPopup').style.display = 'flex';
+        }
+
+        function hidePopup() {
+            document.getElementById('appointmentPopup').style.display = 'none';
+        }
+
+        function bookAppointment() {
+            const doctorName = document.getElementById('doctorName').value;
+            const patientName = document.getElementById('patientName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const appointmentTime = document.getElementById('appointmentTime').value;
+
+            // Add code to handle appointment booking (send data to server, etc.)
+            // You can use the captured information here (doctorName, patientName, email, phone, appointmentTime)
+            alert('Appointment booked successfully for ' + patientName);
+            hidePopup();
+        }
+    </script>
+</body>
+</html>
